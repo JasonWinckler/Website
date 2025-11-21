@@ -91,13 +91,18 @@ section {
 .hero::after {
   content: '';
   position: absolute;
-  inset: -16% -12% -18% -12%;
+  inset: -18% -14% -20% -14%;
   background: radial-gradient(circle at 32% 52%, rgba(0, 0, 0, 0.5), transparent 46%),
+    radial-gradient(circle at 68% 22%, rgba(0, 0, 0, 0.42), transparent 40%),
     radial-gradient(circle at 80% 68%, rgba(30, 0, 6, 0.56), transparent 52%),
-    radial-gradient(circle at 18% 20%, rgba(212, 26, 28, 0.16), transparent 40%);
+    radial-gradient(circle at 18% 20%, rgba(212, 26, 28, 0.16), transparent 40%),
+    radial-gradient(circle at 42% 76%, rgba(12, 0, 4, 0.42), transparent 48%);
+  background-size: 140% 140%, 120% 120%, 150% 150%, 140% 140%, 130% 130%;
+  background-repeat: no-repeat;
   mix-blend-mode: soft-light;
-  filter: blur(32px);
-  animation: shadow-drift 20s ease-in-out infinite alternate;
+  filter: blur(34px);
+  animation: shadow-drift 20s ease-in-out infinite alternate,
+    slow-pan 38s ease-in-out infinite alternate;
   z-index: 1;
   pointer-events: none;
 }
@@ -114,29 +119,52 @@ section {
 
 .smoke-layer {
   position: fixed;
-  inset: -14% -14% -18% -14%;
+  inset: -18% -18% -22% -18%;
   pointer-events: none;
-  background: radial-gradient(circle at 20% 30%, rgba(212, 26, 28, 0.26), transparent 38%),
-    radial-gradient(circle at 80% 60%, rgba(78, 2, 10, 0.4), transparent 45%),
-    radial-gradient(circle at 50% 80%, rgba(255, 56, 38, 0.18), transparent 48%);
-  filter: blur(30px);
-  opacity: 0.55;
+  background: radial-gradient(circle at 20% 30%, rgba(212, 26, 28, 0.22), transparent 38%),
+    radial-gradient(circle at 80% 60%, rgba(78, 2, 10, 0.32), transparent 45%),
+    radial-gradient(circle at 50% 80%, rgba(255, 56, 38, 0.18), transparent 48%),
+    radial-gradient(circle at 60% 20%, rgba(0, 0, 0, 0.4), transparent 46%),
+    radial-gradient(circle at 10% 80%, rgba(0, 0, 0, 0.32), transparent 50%);
+  background-size: 140% 140%, 160% 160%, 150% 150%, 180% 180%, 160% 160%;
+  background-repeat: no-repeat;
+  filter: blur(34px);
+  opacity: 0.65;
   mix-blend-mode: screen;
-  animation: drift 18s ease-in-out infinite alternate;
+  animation: drift 18s ease-in-out infinite alternate, slow-pan 42s ease-in-out infinite alternate;
   z-index: 0;
+}
+
+.smoke-layer::before {
+  content: '';
+  position: absolute;
+  inset: -12% -16% -10% -16%;
+  background: radial-gradient(circle at 30% 40%, rgba(0, 0, 0, 0.45), transparent 42%),
+    radial-gradient(circle at 78% 70%, rgba(20, 0, 4, 0.36), transparent 46%),
+    radial-gradient(circle at 44% 16%, rgba(255, 72, 52, 0.12), transparent 40%),
+    radial-gradient(circle at 12% 66%, rgba(212, 26, 28, 0.18), transparent 44%),
+    radial-gradient(circle at 58% 50%, rgba(0, 0, 0, 0.26), transparent 40%);
+  filter: blur(38px);
+  opacity: 0.8;
+  mix-blend-mode: soft-light;
+  animation: shadow-drift 26s ease-in-out infinite alternate-reverse,
+    slow-pan 48s ease-in-out infinite alternate;
 }
 
 .smoke-layer::after {
   content: '';
   position: absolute;
-  inset: 0;
-  background: radial-gradient(circle at 30% 55%, rgba(0, 0, 0, 0.38), transparent 46%),
+  inset: -6% -6% -6% -6%;
+  background: radial-gradient(circle at 30% 55%, rgba(0, 0, 0, 0.34), transparent 46%),
     radial-gradient(circle at 75% 30%, rgba(20, 0, 0, 0.32), transparent 50%),
-    radial-gradient(circle at 55% 75%, rgba(0, 0, 0, 0.28), transparent 52%);
-  filter: blur(26px);
+    radial-gradient(circle at 55% 75%, rgba(0, 0, 0, 0.26), transparent 52%),
+    radial-gradient(circle at 24% 22%, rgba(255, 84, 58, 0.08), transparent 44%),
+    radial-gradient(circle at 40% 12%, rgba(0, 0, 0, 0.22), transparent 40%);
+  filter: blur(28px);
   mix-blend-mode: soft-light;
-  opacity: 0.7;
-  animation: shadow-drift 22s ease-in-out infinite alternate;
+  opacity: 0.75;
+  animation: shadow-drift 22s ease-in-out infinite alternate,
+    slow-pan 34s ease-in-out infinite alternate;
 }
 
 .nav {
@@ -839,6 +867,18 @@ textarea {
   100% {
     transform: translate3d(18px, -12px, 0) scale(1.05);
     opacity: 0.66;
+  }
+}
+
+@keyframes slow-pan {
+  0% {
+    background-position: 18% 22%, 76% 30%, 34% 64%, 70% 74%, 12% 86%;
+  }
+  50% {
+    background-position: 12% 32%, 68% 26%, 42% 54%, 76% 70%, 20% 78%;
+  }
+  100% {
+    background-position: 24% 28%, 64% 20%, 46% 62%, 82% 66%, 16% 72%;
   }
 }
 
