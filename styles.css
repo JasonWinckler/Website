@@ -882,6 +882,27 @@ textarea {
   }
 }
 
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .background-noise {
+    opacity: 0.04;
+  }
+
+  .smoke-layer,
+  .smoke-layer::before,
+  .smoke-layer::after,
+  .hero::after {
+    animation: none !important;
+  }
+}
+
 @media (max-width: 900px) {
   .nav {
     position: relative;
