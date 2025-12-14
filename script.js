@@ -1,5 +1,9 @@
 const navToggle = document.querySelector('.nav-toggle');
 const navLinks = document.querySelector('.nav-links');
+const scrollIndicator = document.querySelector('.scroll-indicator');
+const animatedElements = document.querySelectorAll('[data-animate]');
+
+document.body.classList.add('js-enabled');
 
 navToggle?.addEventListener('click', () => {
   const isOpen = navLinks?.classList.toggle('open');
@@ -14,4 +18,31 @@ navLinks?.querySelectorAll('a').forEach((link) => {
       navToggle.setAttribute('aria-expanded', 'false');
     }
   });
+});
+
+// Reveal on scroll
+const observer = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  },
+  { threshold: 0.15 }
+);
+
+animatedElements.forEach((el, index) => {
+  el.style.transitionDelay = `${index * 60}ms`;
+  observer.observe(el);
+});
+
+// Scroll indicator behavior
+const firstSection = document.querySelector('main section');
+
+scrollIndicator?.addEventListener('click', () => {
+  if (firstSection) {
+    firstSection.scrollIntoView({ behavior: 'smooth' });
+  }
 });
