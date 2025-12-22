@@ -491,9 +491,9 @@ section {
 }
 
 /* =========================================================
-   MEDIA FEATURE / REELS
+   MEDIA FEATURE / SHOWCASE
    ========================================================= */
-.reels {
+.showcase {
   background: radial-gradient(circle at 20% 0%, rgba(255, 63, 27, 0.18), transparent 40%),
     linear-gradient(180deg, rgba(14, 10, 14, 0.92), rgba(14, 10, 14, 0.96));
 }
