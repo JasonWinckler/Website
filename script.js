@@ -1,3 +1,7 @@
+// =========================================================
+// RUNTIME INITIALIZATION
+// Enables progressive enhancements while keeping markup usable.
+// =========================================================
 const navToggle = document.querySelector('.nav-toggle');
 const navLinks = document.querySelector('.nav-links');
 const scrollIndicator = document.querySelector('.scroll-indicator');
@@ -6,6 +10,10 @@ const firstSection = document.querySelector('main section');
 
 document.body.classList.add('js-enabled');
 
+// =========================================================
+// NAVIGATION
+// Handles mobile toggle and closes the menu on link selection.
+// =========================================================
 const bindNavigation = () => {
   if (!navToggle || !navLinks) return;
 
@@ -24,6 +32,10 @@ const bindNavigation = () => {
   });
 };
 
+// =========================================================
+// INTERSECTION OBSERVER ANIMATIONS
+// Reveals elements in sequence as they enter the viewport.
+// =========================================================
 const animateOnScroll = () => {
   if (!animatedElements.length) return;
 
@@ -45,6 +57,10 @@ const animateOnScroll = () => {
   });
 };
 
+// =========================================================
+// SCROLL INDICATOR
+// Smooth scrolls to the first content section for quick access.
+// =========================================================
 const enableScrollIndicator = () => {
   if (!scrollIndicator || !firstSection) return;
 
@@ -53,6 +69,9 @@ const enableScrollIndicator = () => {
   });
 };
 
+// =========================================================
+// BOOTSTRAP
+// =========================================================
 bindNavigation();
 animateOnScroll();
 enableScrollIndicator();
