@@ -7,6 +7,7 @@ const navLinks = document.querySelector('.nav-links');
 const scrollIndicator = document.querySelector('.scroll-indicator');
 const animatedElements = document.querySelectorAll('[data-animate]');
 const firstSection = document.querySelector('main section');
+const reduceMotionQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
 
 document.body.classList.add('js-enabled');
 
@@ -39,17 +40,19 @@ const bindNavigation = () => {
 const animateOnScroll = () => {
   if (!animatedElements.length) return;
 
-  const observer = new IntersectionObserver(
-    (entries, obs) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('is-visible');
-          obs.unobserve(entry.target);
-        }
-      });
-    },
-    { threshold: 0.15 }
-  );
+  if (reduceMotionQuery.matches || !('IntersectionObserver' in window)) {
+    animatedElements.forEach((el) => el.classList.add('is-visible'));
+    return;
+  }
+
+  const observer = new IntersectionObserver((entries, obs) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+        obs.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15 });
 
   animatedElements.forEach((el, index) => {
     el.style.transitionDelay = `${index * 60}ms`;
@@ -64,8 +67,10 @@ const animateOnScroll = () => {
 const enableScrollIndicator = () => {
   if (!scrollIndicator || !firstSection) return;
 
+  const scrollBehavior = reduceMotionQuery.matches ? 'auto' : 'smooth';
+
   scrollIndicator.addEventListener('click', () => {
-    firstSection.scrollIntoView({ behavior: 'smooth' });
+    firstSection.scrollIntoView({ behavior: scrollBehavior });
   });
 };
 
