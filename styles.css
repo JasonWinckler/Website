@@ -18,6 +18,7 @@
   --radius-sm: 12px;
   --max-width: 1180px;
   --gutter: 1.5rem;
+  scroll-behavior: smooth;
 }
 
 * {
@@ -886,5 +887,33 @@ body:not(.js-enabled) [data-animate] {
 
   .nav {
     position: static;
+  }
+}
+
+/* =========================================================
+   REDUCED MOTION SUPPORT
+   ========================================================= */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  [data-animate] {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  .glow-ring,
+  .scroll-indicator,
+  .button,
+  .service-card,
+  .service-cta-button {
+    animation: none !important;
+    transition: none !important;
   }
 }
