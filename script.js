@@ -5,9 +5,10 @@
 const navToggle = document.querySelector('.nav-toggle');
 const navLinks = document.querySelector('.nav-links');
 const scrollIndicator = document.querySelector('.scroll-indicator');
-const animatedElements = document.querySelectorAll('[data-animate]');
+const animatedElements = Array.from(document.querySelectorAll('[data-animate]'));
 const firstSection = document.querySelector('main section');
 const reduceMotionQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
+const shouldReduceMotion = reduceMotionQuery.matches;
 
 document.body.classList.add('js-enabled');
 
@@ -20,16 +21,16 @@ const bindNavigation = () => {
 
   navToggle.addEventListener('click', () => {
     const isOpen = navLinks.classList.toggle('open');
-    navToggle.setAttribute('aria-expanded', isOpen);
+    navToggle.setAttribute('aria-expanded', String(isOpen));
   });
 
-  navLinks.querySelectorAll('a').forEach((link) => {
-    link.addEventListener('click', () => {
-      if (navLinks.classList.contains('open')) {
-        navLinks.classList.remove('open');
-        navToggle.setAttribute('aria-expanded', 'false');
-      }
-    });
+  navLinks.addEventListener('click', (event) => {
+    if (!event.target.closest('a')) return;
+
+    if (navLinks.classList.contains('open')) {
+      navLinks.classList.remove('open');
+      navToggle.setAttribute('aria-expanded', 'false');
+    }
   });
 };
 
@@ -40,7 +41,7 @@ const bindNavigation = () => {
 const animateOnScroll = () => {
   if (!animatedElements.length) return;
 
-  if (reduceMotionQuery.matches || !('IntersectionObserver' in window)) {
+  if (shouldReduceMotion || !('IntersectionObserver' in window)) {
     animatedElements.forEach((el) => el.classList.add('is-visible'));
     return;
   }
@@ -55,7 +56,7 @@ const animateOnScroll = () => {
   }, { threshold: 0.15 });
 
   animatedElements.forEach((el, index) => {
-    el.style.transitionDelay = `${index * 60}ms`;
+    el.style.setProperty('--animation-order', index);
     observer.observe(el);
   });
 };
@@ -67,7 +68,7 @@ const animateOnScroll = () => {
 const enableScrollIndicator = () => {
   if (!scrollIndicator || !firstSection) return;
 
-  const scrollBehavior = reduceMotionQuery.matches ? 'auto' : 'smooth';
+  const scrollBehavior = shouldReduceMotion ? 'auto' : 'smooth';
 
   scrollIndicator.addEventListener('click', () => {
     firstSection.scrollIntoView({ behavior: scrollBehavior });
