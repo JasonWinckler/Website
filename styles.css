@@ -647,6 +647,12 @@ video {
   align-items: start;
 }
 
+.about-copy {
+  display: grid;
+  gap: 0.75rem;
+  align-content: start;
+}
+
 .highlight-list {
   margin: 1.2rem 0;
   display: grid;
