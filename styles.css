@@ -432,12 +432,13 @@ section {
 }
 
 .services-cta-panel {
-  max-width: var(--max-width);
+  width: min(640px, 100%);
   margin: 4rem auto 0;
   padding: 1.75rem;
   text-align: center;
   display: flex;
   justify-content: center;
+  align-items: center;
   background: linear-gradient(180deg, rgba(23, 6, 13, 0.72), rgba(13, 3, 7, 0.92));
   border: 1px solid var(--outline);
   border-radius: var(--radius);
