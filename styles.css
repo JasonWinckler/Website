@@ -569,6 +569,24 @@ video {
   background: linear-gradient(180deg, rgba(6, 2, 4, 0.92), rgba(6, 2, 4, 0.96));
 }
 
+.portfolio-placeholder {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 3rem 1.5rem 4rem;
+  text-align: center;
+  display: grid;
+  gap: 0.75rem;
+}
+
+.portfolio-placeholder h2 {
+  font-size: clamp(2.5rem, 4vw + 1rem, 3.75rem);
+  margin: 0;
+}
+
+.portfolio-placeholder .section-copy {
+  margin: 0;
+}
+
 .portfolio-grid {
   max-width: var(--max-width);
   margin: 0 auto;
