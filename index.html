@@ -43,7 +43,7 @@
               </span>
             </a>
 
-            <button class="link-button donate" type="button" data-paypal-open aria-haspopup="dialog" aria-controls="paypal-dialog">
+            <button class="link-button donate" type="button" data-paypal-open aria-label="Open PayPal donation popup">
               <span class="icon" aria-hidden="true">♥</span>
               <span>
                 <strong>Support & Donate</strong>
@@ -55,27 +55,9 @@
       </section>
     </main>
 
-    <dialog class="paypal-dialog" id="paypal-dialog" aria-labelledby="paypal-dialog-title">
-      <div class="paypal-dialog__header">
-        <div>
-          <p class="eyebrow">Secure PayPal donation</p>
-          <h2 id="paypal-dialog-title">Support Shadow's Temptation</h2>
-        </div>
-        <button class="paypal-dialog__close" type="button" data-paypal-close aria-label="Close PayPal donation popup">×</button>
-      </div>
-      <iframe
-        class="paypal-dialog__frame"
-        data-paypal-frame
-        title="PayPal donation for Shadow's Temptation"
-        loading="lazy"
-        referrerpolicy="strict-origin-when-cross-origin"
-      ></iframe>
-      <p class="paypal-dialog__fallback">
-        If PayPal does not load inside the popup, open the
-        <a href="https://www.paypal.com/donate/?hosted_button_id=U87BSM6V2TXLC" target="_blank" rel="noopener noreferrer">secure PayPal donation page</a>.
-      </p>
-    </dialog>
+    <div class="paypal-sdk-button" id="paypal-donate-button-container" aria-hidden="true"></div>
 
+    <script src="https://www.paypalobjects.com/donate/sdk/donate-sdk.js" charset="UTF-8"></script>
     <script src="script.js"></script>
   </body>
 </html>

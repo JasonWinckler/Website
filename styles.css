@@ -194,81 +194,15 @@ button.link-button { width: 100%; }
 .link-button small { color: var(--muted); }
 .donate { background: linear-gradient(135deg, rgba(255, 91, 32, 0.24), rgba(255,255,255,0.035)); }
 
-.paypal-dialog {
-  width: min(94vw, 720px);
-  max-height: min(90vh, 820px);
-  padding: 0;
-  color: var(--cream);
-  border: 1px solid rgba(255, 216, 158, 0.36);
-  border-radius: 28px;
-  background: linear-gradient(180deg, rgba(55, 5, 12, 0.96), rgba(20, 2, 6, 0.98));
-  box-shadow: 0 34px 90px rgba(0, 0, 0, 0.62), 0 0 80px rgba(255, 75, 22, 0.2);
+.paypal-sdk-button {
+  position: fixed;
+  left: -9999px;
+  bottom: 0;
+  width: 1px;
+  height: 1px;
   overflow: hidden;
-}
-
-.paypal-dialog::backdrop {
-  background: rgba(5, 0, 2, 0.76);
-  backdrop-filter: blur(8px);
-}
-
-.paypal-dialog__header {
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  gap: 18px;
-  padding: 24px clamp(20px, 5vw, 34px) 18px;
-  border-bottom: 1px solid var(--stroke);
-}
-
-.paypal-dialog__header .eyebrow {
-  margin: 0 0 8px;
-}
-
-.paypal-dialog h2 {
-  margin: 0;
-  font-family: Cinzel, Georgia, serif;
-  font-size: clamp(1.5rem, 5vw, 2.35rem);
-}
-
-.paypal-dialog__close {
-  display: grid;
-  width: 42px;
-  height: 42px;
-  place-items: center;
-  flex: 0 0 auto;
-  color: var(--cream);
-  border: 1px solid var(--stroke);
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.08);
-  font-size: 1.75rem;
-  line-height: 1;
-  cursor: pointer;
-}
-
-.paypal-dialog__close:hover,
-.paypal-dialog__close:focus-visible {
-  border-color: rgba(255, 216, 158, 0.62);
-  outline: none;
-}
-
-.paypal-dialog__frame {
-  display: block;
-  width: 100%;
-  height: min(66vh, 600px);
-  border: 0;
-  background: #fff;
-}
-
-.paypal-dialog__fallback {
-  margin: 0;
-  padding: 14px clamp(20px, 5vw, 34px) 20px;
-  color: var(--muted);
-  font-size: 0.92rem;
-  line-height: 1.5;
-}
-
-.paypal-dialog__fallback a {
-  color: var(--gold);
+  opacity: 0;
+  pointer-events: none;
 }
 
 [data-animate="rise"] {

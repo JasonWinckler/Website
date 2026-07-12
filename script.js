@@ -10,36 +10,40 @@ const observer = new IntersectionObserver((entries) => {
 
 animatedElements.forEach((element) => observer.observe(element));
 
-const paypalDialog = document.querySelector('#paypal-dialog');
-const paypalFrame = document.querySelector('[data-paypal-frame]');
 const openPaypalButton = document.querySelector('[data-paypal-open]');
-const closePaypalButton = document.querySelector('[data-paypal-close]');
+const paypalDonateContainer = document.querySelector('#paypal-donate-button-container');
 const paypalDonationUrl = 'https://www.paypal.com/donate/?hosted_button_id=U87BSM6V2TXLC';
+const paypalHostedButtonId = 'U87BSM6V2TXLC';
 
-const openPaypalPopup = () => {
-  if (!paypalDialog || !paypalFrame) return;
+const renderPaypalHostedButton = () => {
+  if (!window.PayPal?.Donation || !paypalDonateContainer) return;
 
-  paypalFrame.src = paypalDonationUrl;
-
-  if (typeof paypalDialog.showModal === 'function') {
-    paypalDialog.showModal();
-  } else {
-    window.location.href = paypalDonationUrl;
-  }
+  window.PayPal.Donation.Button({
+    env: 'production',
+    hosted_button_id: paypalHostedButtonId,
+    image: {
+      src: 'https://www.paypalobjects.com/en_US/DK/i/btn/btn_donateCC_LG.gif',
+      alt: 'Donate with PayPal button',
+      title: 'PayPal - The safer, easier way to pay online!',
+    },
+  }).render('#paypal-donate-button-container');
 };
 
-const closePaypalPopup = () => {
-  if (!paypalDialog || !paypalFrame) return;
+const triggerPaypalHostedButton = () => {
+  const sdkButton = paypalDonateContainer?.querySelector('button, input, img, a');
 
-  paypalDialog.close();
-  paypalFrame.src = 'about:blank';
+  if (sdkButton) {
+    sdkButton.click();
+    return;
+  }
+
+  window.location.href = paypalDonationUrl;
 };
 
-openPaypalButton?.addEventListener('click', openPaypalPopup);
-closePaypalButton?.addEventListener('click', closePaypalPopup);
+openPaypalButton?.addEventListener('click', triggerPaypalHostedButton);
 
-paypalDialog?.addEventListener('click', (event) => {
-  if (event.target === paypalDialog) {
-    closePaypalPopup();
-  }
-});
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', renderPaypalHostedButton);
+} else {
+  renderPaypalHostedButton();
+}
