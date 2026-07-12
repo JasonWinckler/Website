@@ -1,10 +1,10 @@
 <!doctype html>
-<html lang="de">
+<html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#2a0207" />
-    <meta name="description" content="Shadow's Temptation — professionelle Link-Hub Website mit exklusiven Links und Spendenbutton." />
+    <meta name="description" content="Shadow's Temptation — a professional link hub website with exclusive links and a donation button." />
     <title>Shadow's Temptation | Links</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -16,17 +16,17 @@
     <main class="page-shell">
       <section class="profile-card" data-animate="rise">
         <div class="banner-wrap">
-          <img class="banner" src="uploads/banner.png" alt="Shadow's Temptation Banner" />
+          <img class="banner" src="uploads/banner.png" alt="Shadow's Temptation banner" />
           <div class="banner-overlay"></div>
         </div>
 
         <div class="profile-content">
-          <img class="avatar" src="uploads/profile.png" alt="Profilbild von Shadow's Temptation" />
+          <img class="avatar" src="uploads/profile.png" alt="Profile photo of Shadow's Temptation" />
           <p class="eyebrow">Official link hub</p>
           <h1>Shadow's Temptation</h1>
-          <p class="tagline">Dunkel, elegant und mit einem Hauch Feuer — alle wichtigen Links an einem Ort.</p>
+          <p class="tagline">Dark, elegant, and touched with fire — every important link in one place.</p>
 
-          <nav class="link-list" aria-label="Social Links">
+          <nav class="link-list" aria-label="Social links">
             <a class="link-button instagram" href="https://www.instagram.com/shadows.temptation_official" target="_blank" rel="noopener noreferrer">
               <span class="icon" aria-hidden="true">◎</span>
               <span>
@@ -43,17 +43,38 @@
               </span>
             </a>
 
-            <a class="link-button donate" href="https://www.paypal.com/donate/?hosted_button_id=U87BSM6V2TXLC" target="_blank" rel="noopener noreferrer">
+            <button class="link-button donate" type="button" data-paypal-open aria-haspopup="dialog" aria-controls="paypal-dialog">
               <span class="icon" aria-hidden="true">♥</span>
               <span>
-                <strong>Support & Spenden</strong>
-                <small>PayPal Donation</small>
+                <strong>Support & Donate</strong>
+                <small>PayPal donation</small>
               </span>
-            </a>
+            </button>
           </nav>
         </div>
       </section>
     </main>
+
+    <dialog class="paypal-dialog" id="paypal-dialog" aria-labelledby="paypal-dialog-title">
+      <div class="paypal-dialog__header">
+        <div>
+          <p class="eyebrow">Secure PayPal donation</p>
+          <h2 id="paypal-dialog-title">Support Shadow's Temptation</h2>
+        </div>
+        <button class="paypal-dialog__close" type="button" data-paypal-close aria-label="Close PayPal donation popup">×</button>
+      </div>
+      <iframe
+        class="paypal-dialog__frame"
+        data-paypal-frame
+        title="PayPal donation for Shadow's Temptation"
+        loading="lazy"
+        referrerpolicy="strict-origin-when-cross-origin"
+      ></iframe>
+      <p class="paypal-dialog__fallback">
+        If PayPal does not load inside the popup, open the
+        <a href="https://www.paypal.com/donate/?hosted_button_id=U87BSM6V2TXLC" target="_blank" rel="noopener noreferrer">secure PayPal donation page</a>.
+      </p>
+    </dialog>
 
     <script src="script.js"></script>
   </body>
