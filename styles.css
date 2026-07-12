@@ -189,6 +189,12 @@ h1 {
   font-size: 1.4rem;
 }
 
+.brand-icon {
+  width: 26px;
+  height: 26px;
+  display: block;
+}
+
 .link-button strong { display: block; font-size: 1.04rem; }
 button.link-button { width: 100%; }
 .link-button small { color: var(--muted); }
