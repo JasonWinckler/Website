@@ -35,7 +35,7 @@
               </span>
             </a>
 
-            <a class="link-button exclusive" href="https://onlyfans.com/shadows_temptation" target="_blank" rel="noopener noreferrer nofollow">
+            <a class="link-button exclusive" href="https://onlyfans.com/shadows_temptation" target="_blank" rel="noopener noreferrer nofollow" data-sensitive-link>
               <span class="icon" aria-hidden="true">
                 <img class="brand-icon" src="uploads/onlyfans.svg" alt="" loading="lazy" />
               </span>
@@ -56,6 +56,19 @@
         </div>
       </section>
     </main>
+
+    <div class="sensitive-modal" data-sensitive-modal hidden>
+      <div class="sensitive-modal__backdrop" data-sensitive-cancel></div>
+      <div class="sensitive-modal__dialog" role="dialog" aria-modal="true" aria-labelledby="sensitive-modal-title" aria-describedby="sensitive-modal-description" tabindex="-1">
+        <p class="sensitive-modal__eyebrow">WARNING: Sensitive Content</p>
+        <h2 id="sensitive-modal-title">Are you 18+ years old?</h2>
+        <p id="sensitive-modal-description">This link may lead to adult-oriented exclusive content. Please confirm your age before continuing.</p>
+        <div class="sensitive-modal__actions">
+          <button class="sensitive-modal__button sensitive-modal__button--cancel" type="button" data-sensitive-cancel>Cancel</button>
+          <button class="sensitive-modal__button sensitive-modal__button--continue" type="button" data-sensitive-continue>Continue</button>
+        </div>
+      </div>
+    </div>
 
     <div class="paypal-sdk-button" id="paypal-donate-button-container" aria-hidden="true"></div>
 
