@@ -221,9 +221,19 @@ const updatePortfolioActiveCard = (index = activePortfolioIndex) => {
   const titleKey = activeCard.dataset.titleKey;
   const textKey = activeCard.dataset.textKey;
 
+  const previousIndex = (activePortfolioIndex - 1 + portfolioCards.length) % portfolioCards.length;
+  const nextIndex = (activePortfolioIndex + 1) % portfolioCards.length;
+
   portfolioCards.forEach((card, cardIndex) => {
-    card.classList.toggle('is-active', cardIndex === activePortfolioIndex);
-    card.setAttribute('aria-current', cardIndex === activePortfolioIndex ? 'true' : 'false');
+    const isActive = cardIndex === activePortfolioIndex;
+    const isPrevious = cardIndex === previousIndex;
+    const isNext = cardIndex === nextIndex;
+
+    card.classList.toggle('is-active', isActive);
+    card.classList.toggle('is-previous', isPrevious && !isActive);
+    card.classList.toggle('is-next', isNext && !isActive);
+    card.setAttribute('aria-current', isActive ? 'true' : 'false');
+    card.setAttribute('aria-hidden', isActive ? 'false' : 'true');
   });
 
   if (portfolioActiveTitle && titleKey) {
