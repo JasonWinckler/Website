@@ -195,6 +195,26 @@ h1 {
   width: 26px;
   height: 26px;
   display: block;
+  overflow: visible;
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.8;
+  filter: drop-shadow(0 0 8px rgba(248, 215, 164, 0.24));
+}
+
+.brand-icon .icon-dot,
+.brand-icon .world-node {
+  fill: currentColor;
+  stroke: none;
+}
+
+.world-icon { stroke-width: 1.35; }
+
+.world-icon .world-link {
+  stroke-width: 1.55;
+  opacity: 0.82;
 }
 
 .link-button strong { display: block; font-size: 1.04rem; }
