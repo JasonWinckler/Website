@@ -78,11 +78,22 @@
                 <small>jason-shadow.com</small>
               </span>
             </a>
+
+            <button class="link-button donate" type="button" data-paypal-open aria-label="Open PayPal donation popup">
+              <span class="icon" aria-hidden="true">♥</span>
+              <span>
+                <strong>Support & Donate</strong>
+                <small>PayPal donation</small>
+              </span>
+            </button>
           </nav>
         </div>
       </section>
     </main>
 
+    <div class="paypal-sdk-button" id="paypal-donate-button-container" aria-hidden="true"></div>
+
+    <script src="https://www.paypalobjects.com/donate/sdk/donate-sdk.js" charset="UTF-8"></script>
     <script src="script.js"></script>
   </body>
 </html>
