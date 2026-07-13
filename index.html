@@ -16,15 +16,23 @@
 
     <header class="site-header" data-animate="rise">
       <a class="brand" href="#top" aria-label="Jason Shadow homepage" data-i18n-attr="aria-label:brandAria">Jason Shadow</a>
-      <nav class="main-nav" aria-label="Main navigation" data-i18n-attr="aria-label:navAria">
-        <a href="#portfolio" data-i18n="navPortfolio">Portfolio</a>
-        <a href="#services" data-i18n="navServices">Services</a>
-        <a href="#news" data-i18n="navNews">News</a>
-        <a href="#booking" data-i18n="navBooking">Booking</a>
-      </nav>
-      <div class="language-switcher" aria-label="Language selection" data-i18n-attr="aria-label:languageAria">
-        <button class="language-button is-active" type="button" data-lang="en" aria-pressed="true">EN</button>
-        <button class="language-button" type="button" data-lang="de" aria-pressed="false">DE</button>
+      <button class="menu-toggle" type="button" aria-controls="site-menu" aria-expanded="false" aria-label="Open menu" data-i18n-attr="aria-label:menuOpenAria">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </button>
+      <div class="menu-backdrop" data-menu-backdrop hidden></div>
+      <div id="site-menu" class="menu-panel">
+        <nav class="main-nav" aria-label="Main navigation" data-i18n-attr="aria-label:navAria">
+          <a href="#portfolio" data-i18n="navPortfolio">Portfolio</a>
+          <a href="#services" data-i18n="navServices">Services</a>
+          <a href="#news" data-i18n="navNews">News</a>
+          <a href="#booking" data-i18n="navBooking">Booking</a>
+        </nav>
+        <div class="language-switcher" aria-label="Language selection" data-i18n-attr="aria-label:languageAria">
+          <button class="language-button is-active" type="button" data-lang="en" aria-pressed="true">EN</button>
+          <button class="language-button" type="button" data-lang="de" aria-pressed="false">DE</button>
+        </div>
       </div>
     </header>
 
