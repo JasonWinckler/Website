@@ -153,7 +153,7 @@ const defaultLanguage = 'en';
 
 const siteHeader = document.querySelector('.site-header');
 const menuToggle = document.querySelector('.menu-toggle');
-const menuPanel = document.querySelector('#site-menu');
+const menuPanel = document.querySelector('#mobile-site-menu');
 const menuBackdrop = document.querySelector('[data-menu-backdrop]');
 
 const setMenuState = (isOpen) => {
