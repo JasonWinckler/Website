@@ -5,6 +5,8 @@ const translations = {
     brandAria: 'Jason Shadow homepage',
     navAria: 'Main navigation',
     languageAria: 'Language selection',
+    menuOpenAria: 'Open menu',
+    menuCloseAria: 'Close menu',
     navPortfolio: 'Portfolio',
     navServices: 'Services',
     navNews: 'News',
@@ -77,6 +79,8 @@ const translations = {
     brandAria: 'Jason Shadow Startseite',
     navAria: 'Hauptnavigation',
     languageAria: 'Sprachauswahl',
+    menuOpenAria: 'Menü öffnen',
+    menuCloseAria: 'Menü schließen',
     navPortfolio: 'Portfolio',
     navServices: 'Services',
     navNews: 'News',
@@ -146,6 +150,45 @@ const translations = {
 };
 
 const defaultLanguage = 'en';
+
+const siteHeader = document.querySelector('.site-header');
+const menuToggle = document.querySelector('.menu-toggle');
+const menuPanel = document.querySelector('#mobile-site-menu');
+const menuBackdrop = document.querySelector('[data-menu-backdrop]');
+
+const setMenuState = (isOpen) => {
+  siteHeader?.classList.toggle('is-menu-open', isOpen);
+  document.body.classList.toggle('menu-open', isOpen);
+  menuToggle?.setAttribute('aria-expanded', String(isOpen));
+  menuToggle?.setAttribute('aria-label', translations[document.documentElement.lang]?.[isOpen ? 'menuCloseAria' : 'menuOpenAria'] || translations[defaultLanguage][isOpen ? 'menuCloseAria' : 'menuOpenAria']);
+
+  if (menuBackdrop) {
+    menuBackdrop.hidden = !isOpen;
+  }
+};
+
+menuToggle?.addEventListener('click', () => {
+  setMenuState(menuToggle.getAttribute('aria-expanded') !== 'true');
+});
+
+menuBackdrop?.addEventListener('click', () => setMenuState(false));
+
+menuPanel?.querySelectorAll('a').forEach((link) => {
+  link.addEventListener('click', () => setMenuState(false));
+});
+
+document.addEventListener('keydown', (event) => {
+  if (event.key === 'Escape') {
+    setMenuState(false);
+  }
+});
+
+window.matchMedia('(min-width: 861px)').addEventListener('change', (event) => {
+  if (event.matches) {
+    setMenuState(false);
+  }
+});
+
 const languageButtons = document.querySelectorAll('[data-lang]');
 const descriptionMeta = document.querySelector('meta[name="description"]');
 
@@ -172,6 +215,8 @@ const setLanguage = (language) => {
       }
     });
   });
+
+  setMenuState(menuToggle?.getAttribute('aria-expanded') === 'true');
 
   languageButtons.forEach((button) => {
     const isActive = button.dataset.lang === activeLanguage;
