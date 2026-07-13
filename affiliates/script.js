@@ -41,15 +41,29 @@ const renderPaypalHostedButton = () => {
   }).render('#paypal-donate-button-container');
 };
 
+const openPaypalDonationPopup = () => {
+  window.open(
+    paypalDonationUrl,
+    'paypal-donate',
+    'popup=yes,width=520,height=720,noopener,noreferrer'
+  );
+};
+
 const triggerPaypalHostedButton = () => {
-  const sdkButton = paypalDonateContainer?.querySelector('button, input, img, a');
+  const sdkButton = paypalDonateContainer?.querySelector('form button, form input, button, input, a');
+  const sdkForm = paypalDonateContainer?.querySelector('form');
 
   if (sdkButton) {
     sdkButton.click();
     return;
   }
 
-  window.location.href = paypalDonationUrl;
+  if (sdkForm) {
+    sdkForm.submit();
+    return;
+  }
+
+  openPaypalDonationPopup();
 };
 
 openPaypalButton?.addEventListener('click', triggerPaypalHostedButton);
