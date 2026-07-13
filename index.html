@@ -18,6 +18,7 @@
       <a class="brand" href="#top" aria-label="Jason Shadow homepage" data-i18n-attr="aria-label:brandAria">Jason Shadow</a>
       <nav class="main-nav desktop-nav" aria-label="Main navigation" data-i18n-attr="aria-label:navAria">
         <a href="#portfolio" data-i18n="navPortfolio">Portfolio</a>
+        <a href="#about" data-i18n="navAbout">About Me</a>
         <a href="#services" data-i18n="navServices">Services</a>
         <a href="#news" data-i18n="navNews">News</a>
         <a href="#booking" data-i18n="navBooking">Booking</a>
@@ -35,6 +36,7 @@
       <aside id="mobile-site-menu" class="mobile-menu-panel" aria-label="Mobile navigation" data-i18n-attr="aria-label:navAria">
         <nav class="main-nav mobile-nav" aria-label="Main navigation" data-i18n-attr="aria-label:navAria">
           <a href="#portfolio" data-i18n="navPortfolio">Portfolio</a>
+          <a href="#about" data-i18n="navAbout">About Me</a>
           <a href="#services" data-i18n="navServices">Services</a>
           <a href="#news" data-i18n="navNews">News</a>
           <a href="#booking" data-i18n="navBooking">Booking</a>
@@ -93,28 +95,69 @@
         </article>
       </section>
 
-      <section id="portfolio" class="section" data-animate="rise">
+      <section id="portfolio" class="section portfolio-section" data-animate="rise">
         <div class="section-heading">
           <p class="eyebrow">Portfolio</p>
-          <h2 data-i18n="portfolioTitle">Selected focus areas</h2>
-          <p data-i18n="portfolioIntro">A modular overview for music, event and brand productions.</p>
+          <h2 data-i18n="portfolioTitle">Portfolio</h2>
+          <p data-i18n="portfolioIntro">My three biggest projects</p>
         </div>
-        <div class="portfolio-grid">
-          <article class="portfolio-card">
-            <span class="icon" aria-hidden="true">♪</span>
-            <h3 data-i18n="portfolioVocalTitle">Vocals & Songwriting</h3>
-            <p data-i18n="portfolioVocalText">Lead vocals, backing vocals, toplines, hook ideas and emotional interpretations for pop, dark pop, rock and cinematic sounds.</p>
+        <div class="portfolio-carousel" aria-label="Portfolio gallery carousel" data-i18n-attr="aria-label:portfolioCarouselAria">
+          <article class="portfolio-showcase-card">
+            <div class="portfolio-media">
+              <video class="portfolio-video" controls preload="metadata" aria-label="January 2026 performance at KÖPI am Ring in Rheine" data-i18n-attr="aria-label:portfolioItem1Alt">
+                <source src="uploads/portfolio/Auftrag1.mp4" type="video/mp4" />
+              </video>
+              <picture>
+                <source srcset="uploads/portfolio/Auftrag1.png" type="image/png" />
+                <img src="uploads/portfolio/Auftrag1.png" alt="January 2026 performance at KÖPI am Ring in Rheine" data-i18n-attr="alt:portfolioItem1Alt" loading="lazy" onerror="this.hidden = true" />
+              </picture>
+              <span class="media-fallback" data-i18n="portfolioUploadHint">Upload: uploads/portfolio/Auftrag1.png or Auftrag1.mp4</span>
+            </div>
+            <div class="portfolio-copy">
+              <span class="portfolio-date" data-i18n="portfolioItem1Date">January 2026</span>
+              <h3 data-i18n="portfolioItem1Title">KÖPI am Ring Rheine — Singer</h3>
+              <p data-i18n="portfolioItem1Text">Live vocal performance as Jason Shadow with a dark, warm baritone presence for an atmospheric event moment in Rheine.</p>
+            </div>
           </article>
-          <article class="portfolio-card">
-            <span class="icon" aria-hidden="true">◉</span>
-            <h3 data-i18n="portfolioVoiceTitle">Speaker, Host & Presenter</h3>
-            <p data-i18n="portfolioVoiceText">A charismatic presence for events, moderation, speeches, live announcements, brand moments and spoken stage formats.</p>
+          <article class="portfolio-showcase-card is-placeholder">
+            <div class="portfolio-media empty-media"><span>Auftrag2</span></div>
+            <div class="portfolio-copy">
+              <span class="portfolio-date" data-i18n="portfolioItem2Date">Next reference</span>
+              <h3 data-i18n="portfolioItem2Title">Project slot 2</h3>
+              <p data-i18n="portfolioItem2Text">Reserved for the next completed booking. Upload Auftrag2.png or Auftrag2.mp4 to the portfolio upload folder.</p>
+            </div>
           </article>
-          <article class="portfolio-card">
-            <span class="icon" aria-hidden="true">✦</span>
-            <h3 data-i18n="portfolioLiveTitle">Live & Events</h3>
-            <p data-i18n="portfolioLiveText">Performances, host intros, event voice, acoustic sets and memorable musical moments with a dark premium look.</p>
+          <article class="portfolio-showcase-card is-placeholder">
+            <div class="portfolio-media empty-media"><span>Auftrag3</span></div>
+            <div class="portfolio-copy">
+              <span class="portfolio-date" data-i18n="portfolioItem3Date">Next reference</span>
+              <h3 data-i18n="portfolioItem3Title">Project slot 3</h3>
+              <p data-i18n="portfolioItem3Text">Reserved for another highlight reference. Upload Auftrag3.png or Auftrag3.mp4 to complete the carousel.</p>
+            </div>
           </article>
+        </div>
+      </section>
+
+      <section id="about" class="section about-section" data-animate="rise">
+        <div class="about-video-card">
+          <video class="intro-video" controls preload="metadata" poster="uploads/profile.png" aria-label="Introduction video placeholder" data-i18n-attr="aria-label:aboutVideoAria">
+            <source src="uploads/about/introduction.mp4" type="video/mp4" />
+          </video>
+          <div class="video-placeholder">
+            <span class="play-button" aria-hidden="true">▶</span>
+            <strong data-i18n="aboutVideoTitle">Introduction video</strong>
+            <small data-i18n="aboutVideoHint">Upload your MP4 as uploads/about/introduction.mp4</small>
+          </div>
+        </div>
+        <div class="section-heading align-left">
+          <p class="eyebrow" data-i18n="aboutEyebrow">About Me</p>
+          <h2 data-i18n="aboutTitle">Voice, presence and emotion for your moment</h2>
+          <p data-i18n="aboutIntro">I am Jason Shadow — a baritone singer, speaker and host with a warm, dark timbre and a focus on memorable live moments.</p>
+          <ul class="about-list">
+            <li data-i18n="aboutPoint1">Live vocals and atmospheric performances for events</li>
+            <li data-i18n="aboutPoint2">Speaking, moderation and stage presence for brands and private bookings</li>
+            <li data-i18n="aboutPoint3">Creative support from concept and mood to the final performance</li>
+          </ul>
         </div>
       </section>
 

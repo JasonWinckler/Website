@@ -8,6 +8,7 @@ const translations = {
     menuOpenAria: 'Open menu',
     menuCloseAria: 'Close menu',
     navPortfolio: 'Portfolio',
+    navAbout: 'About Me',
     navServices: 'Services',
     navNews: 'News',
     navBooking: 'Booking',
@@ -28,14 +29,29 @@ const translations = {
     statStudioText: 'Baritone vocals, demos, hooks, intros and full productions',
     statVoiceTitle: 'Events & Speaking',
     statVoiceText: 'Events, hosting, moderation, speeches, brand moments and live announcements',
-    portfolioTitle: 'Selected focus areas',
-    portfolioIntro: 'A modular overview for music, event and brand productions.',
-    portfolioVocalTitle: 'Vocals & Songwriting',
-    portfolioVocalText: 'Lead vocals, backing vocals, toplines, hook ideas and emotional interpretations for pop, dark pop, rock and cinematic sounds.',
-    portfolioVoiceTitle: 'Speaker, Host & Presenter',
-    portfolioVoiceText: 'A charismatic presence for events, moderation, speeches, live announcements, brand moments and spoken stage formats.',
-    portfolioLiveTitle: 'Live & Events',
-    portfolioLiveText: 'Performances, host intros, event voice, acoustic sets and memorable musical moments with a dark premium look.',
+    portfolioTitle: 'Portfolio',
+    portfolioIntro: 'My three biggest projects',
+    portfolioCarouselAria: 'Portfolio gallery carousel',
+    portfolioUploadHint: 'Upload: uploads/portfolio/Auftrag1.png or Auftrag1.mp4',
+    portfolioItem1Alt: 'January 2026 performance at KÖPI am Ring in Rheine',
+    portfolioItem1Date: 'January 2026',
+    portfolioItem1Title: 'KÖPI am Ring Rheine — Singer',
+    portfolioItem1Text: 'Live vocal performance as Jason Shadow with a dark, warm baritone presence for an atmospheric event moment in Rheine.',
+    portfolioItem2Date: 'Next reference',
+    portfolioItem2Title: 'Project slot 2',
+    portfolioItem2Text: 'Reserved for the next completed booking. Upload Auftrag2.png or Auftrag2.mp4 to the portfolio upload folder.',
+    portfolioItem3Date: 'Next reference',
+    portfolioItem3Title: 'Project slot 3',
+    portfolioItem3Text: 'Reserved for another highlight reference. Upload Auftrag3.png or Auftrag3.mp4 to complete the carousel.',
+    aboutEyebrow: 'About Me',
+    aboutTitle: 'Voice, presence and emotion for your moment',
+    aboutIntro: 'I am Jason Shadow — a baritone singer, speaker and host with a warm, dark timbre and a focus on memorable live moments.',
+    aboutVideoAria: 'Introduction video placeholder',
+    aboutVideoTitle: 'Introduction video',
+    aboutVideoHint: 'Upload your MP4 as uploads/about/introduction.mp4',
+    aboutPoint1: 'Live vocals and atmospheric performances for events',
+    aboutPoint2: 'Speaking, moderation and stage presence for brands and private bookings',
+    aboutPoint3: 'Creative support from concept and mood to the final performance',
     servicesTitle: 'Everything a strong voice needs',
     servicesIntro: 'From first idea to final recording — flexible for small productions and major campaigns.',
     serviceStudioTitle: 'Baritone Vocals',
@@ -82,6 +98,7 @@ const translations = {
     menuOpenAria: 'Menü öffnen',
     menuCloseAria: 'Menü schließen',
     navPortfolio: 'Portfolio',
+    navAbout: 'Über Mich',
     navServices: 'Services',
     navNews: 'News',
     navBooking: 'Booking',
@@ -102,14 +119,29 @@ const translations = {
     statStudioText: 'Bariton-Vocals, Demos, Hooks, Intros und komplette Produktionen',
     statVoiceTitle: 'Events & Speaking',
     statVoiceText: 'Events, Moderation, Reden, Markenmomente, Social Clips und Live-Ansagen',
-    portfolioTitle: 'Ausgewählte Schwerpunkte',
-    portfolioIntro: 'Ein modularer Überblick für Musik-, Event- und Markenproduktionen.',
-    portfolioVocalTitle: 'Gesang & Songwriting',
-    portfolioVocalText: 'Lead Vocals, Backings, Toplines, Hook-Ideen und emotionale Interpretationen für Pop, Dark Pop, Rock und cineastische Sounds.',
-    portfolioVoiceTitle: 'Sprecher, Moderator & Redner',
-    portfolioVoiceText: 'Charakterstarke Präsenz für Events, Moderation, Reden, Live-Ansagen, Markenmomente und gesprochene Bühnenformate.',
-    portfolioLiveTitle: 'Live & Events',
-    portfolioLiveText: 'Auftritte, Moderations-Intros, Event-Voice, Akustik-Sets und besondere musikalische Momente mit dunklem Premium-Look.',
+    portfolioTitle: 'Portfolio',
+    portfolioIntro: 'Meine drei größten Aufträge',
+    portfolioCarouselAria: 'Portfolio Galerie-Karussell',
+    portfolioUploadHint: 'Upload: uploads/portfolio/Auftrag1.png oder Auftrag1.mp4',
+    portfolioItem1Alt: 'Auftritt im Januar 2026 im KÖPI am Ring in Rheine',
+    portfolioItem1Date: 'Januar 2026',
+    portfolioItem1Title: 'KÖPI am Ring Rheine — Sänger',
+    portfolioItem1Text: 'Live-Gesangsauftritt als Jason Shadow mit dunkler, warmer Bariton-Präsenz für einen atmosphärischen Eventmoment in Rheine.',
+    portfolioItem2Date: 'Nächste Referenz',
+    portfolioItem2Title: 'Auftrag 2',
+    portfolioItem2Text: 'Reserviert für die nächste abgeschlossene Buchung. Lade Auftrag2.png oder Auftrag2.mp4 in den Portfolio-Upload-Ordner hoch.',
+    portfolioItem3Date: 'Nächste Referenz',
+    portfolioItem3Title: 'Auftrag 3',
+    portfolioItem3Text: 'Reserviert für eine weitere Highlight-Referenz. Lade Auftrag3.png oder Auftrag3.mp4 hoch, um das Karussell zu vervollständigen.',
+    aboutEyebrow: 'Über Mich',
+    aboutTitle: 'Stimme, Präsenz und Emotion für deinen Moment',
+    aboutIntro: 'Ich bin Jason Shadow — Bariton-Sänger, Sprecher und Moderator mit warmer, dunkler Klangfarbe und Fokus auf unvergessliche Live-Momente.',
+    aboutVideoAria: 'Platzhalter für Vorstellungsvideo',
+    aboutVideoTitle: 'Vorstellungsvideo',
+    aboutVideoHint: 'Lade deine MP4 als uploads/about/introduction.mp4 hoch',
+    aboutPoint1: 'Live-Gesang und atmosphärische Performances für Events',
+    aboutPoint2: 'Sprechen, Moderation und Bühnenpräsenz für Marken und private Buchungen',
+    aboutPoint3: 'Kreative Unterstützung vom Konzept und Mood bis zur finalen Performance',
     servicesTitle: 'Alles, was eine starke Stimme braucht',
     servicesIntro: 'Von der ersten Idee bis zur finalen Aufnahme — flexibel für kleine Produktionen und große Kampagnen.',
     serviceStudioTitle: 'Bariton Vocals',
@@ -242,6 +274,29 @@ const observer = new IntersectionObserver((entries) => {
 }, { threshold: 0.2 });
 
 animatedElements.forEach((element) => observer.observe(element));
+
+
+
+document.querySelectorAll('.portfolio-video').forEach((video) => {
+  video.addEventListener('loadeddata', () => {
+    video.closest('.portfolio-media')?.classList.add('has-video');
+  });
+
+  video.addEventListener('error', () => {
+    video.closest('.portfolio-media')?.classList.remove('has-video');
+  });
+});
+
+const introVideo = document.querySelector('.intro-video');
+const aboutVideoCard = document.querySelector('.about-video-card');
+
+introVideo?.addEventListener('loadeddata', () => {
+  aboutVideoCard?.classList.add('has-video');
+});
+
+introVideo?.addEventListener('error', () => {
+  aboutVideoCard?.classList.remove('has-video');
+});
 
 const budgetInput = document.querySelector('#budget');
 const budgetOutput = document.querySelector('#budget-output');
