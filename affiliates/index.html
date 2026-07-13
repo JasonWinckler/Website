@@ -16,27 +16,39 @@
     <main class="page-shell">
       <section class="profile-card" data-animate="rise">
         <div class="banner-wrap">
-          <img class="banner" src="uploads/banner.svg" alt="Jason Shadow affiliate banner" />
+          <img class="banner" src="uploads/banner.jfif" alt="Jason Shadow affiliate banner" data-fallback-src="uploads/banner.svg" />
           <div class="banner-overlay"></div>
         </div>
 
         <div class="profile-content">
-          <img class="avatar" src="uploads/profile.svg" alt="Profile image of Jason Shadow" />
+          <img class="avatar" src="uploads/profile.png" alt="Profile photo of Jason Shadow" data-fallback-src="uploads/profile.svg" />
           <p class="eyebrow">Official affiliate hub</p>
           <h1>Jason Shadow</h1>
           <p class="tagline">My affiliate links, partner recommendations and useful resources in one place.</p>
 
-          <nav class="link-list" aria-label="Affiliate links">
-            <a class="link-button affiliate-card image-card" href="https://beacons.ai/jason.shadow_official" target="_blank" rel="noopener noreferrer sponsored">
-              <span class="image-thumb" aria-hidden="true">
-                <img src="uploads/affiliate-icon.svg" alt="" loading="lazy" />
+          <section class="affiliate-gallery" aria-label="Affiliate partner gallery">
+            <a class="affiliate-tile" href="https://beacons.ai/jason.shadow_official" target="_blank" rel="noopener noreferrer sponsored">
+              <span class="affiliate-tile__image">
+                <img src="uploads/corissia.jpg" alt="Corissia Resorts on Crete" loading="lazy" data-fallback-src="uploads/corissia.svg" />
               </span>
-              <span>
+              <span class="affiliate-tile__content">
                 <strong>Corissia Resorts - Best Hotel on Crete</strong>
                 <small>Partner hotel recommendation from my previous LinkTree</small>
               </span>
             </a>
 
+            <a class="affiliate-tile" href="https://www.waterdrop.com/" target="_blank" rel="noopener noreferrer sponsored">
+              <span class="affiliate-tile__image">
+                <img src="uploads/waterdrop.jpg" alt="Waterdrop hydration products" loading="lazy" data-fallback-src="uploads/waterdrop.svg" />
+              </span>
+              <span class="affiliate-tile__content">
+                <strong>Waterdrop®</strong>
+                <small>Staying hydrated is important for your health and voice - Waterdrop® makes it easy. Enjoy drinking!</small>
+              </span>
+            </a>
+          </section>
+
+          <nav class="link-list secondary-links" aria-label="Additional links">
             <a class="link-button instagram" href="https://www.instagram.com/jason.shadow_official/" target="_blank" rel="noopener noreferrer">
               <span class="icon" aria-hidden="true">◎</span>
               <span>

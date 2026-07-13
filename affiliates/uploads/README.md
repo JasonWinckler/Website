@@ -2,8 +2,11 @@
 
 Use this folder for the `/affiliates/` LinkHub images only.
 
-- `profile.svg` — avatar/profile image shown at the top of the affiliate hub.
-- `banner.svg` — wide hero banner image shown behind the profile area.
-- `affiliate-icon.svg` — small icon used for affiliate cards.
+Current page image slots:
 
-You can replace these placeholders with `.jpg`, `.png`, `.webp`, or `.svg` files. If you change filenames, update the matching `src` values in `/affiliates/index.html`.
+- `banner.jfif` — wide header/banner image from the Beacons page.
+- `profile.png` — profile photo/avatar from the Beacons page.
+- `corissia.jpg` — Corissia Resorts gallery tile image from the Beacons page.
+- `waterdrop.jpg` — Waterdrop® gallery tile image from the Beacons page.
+
+Fallback placeholders are also included as SVG files so the page remains readable until the final exported Beacons images are present. If you use different filenames, update the matching `src` values in `/affiliates/index.html`.
