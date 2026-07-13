@@ -8,6 +8,7 @@ const translations = {
     menuOpenAria: 'Open menu',
     menuCloseAria: 'Close menu',
     navPortfolio: 'Portfolio',
+    navAbout: 'About Me',
     navServices: 'Services',
     navNews: 'News',
     navBooking: 'Booking',
@@ -17,35 +18,41 @@ const translations = {
     heroTagline: 'A distinctive voice between goosebumps, storytelling and dark elegance — for music, stages, events, keynotes and brand moments.',
     signatureAria: 'Signature song placeholder',
     playAria: 'Play signature song',
+    signatureTitle: 'The Healing Shadow',
     signatureSmall: 'Play-button placeholder · Audio coming soon',
     heroPrimary: 'Book now',
     heroSecondary: 'View portfolio',
-    introAria: 'Short profile',
-    introEyebrow: 'The Healing Shadow',
-    introTitle: 'Dark. Warm. Unmistakable.',
-    introText: 'Whether it is an emotional chorus, a hosted event or a powerful brand moment: Jason Shadow combines baritone vocal presence with professional speaking, moderation and stage performance.',
-    statStudioTitle: 'Baritone & Studio',
-    statStudioText: 'Baritone vocals, demos, hooks, intros and full productions',
-    statVoiceTitle: 'Events & Speaking',
-    statVoiceText: 'Events, hosting, moderation, speeches, brand moments and live announcements',
-    portfolioTitle: 'Selected focus areas',
-    portfolioIntro: 'A modular overview for music, event and brand productions.',
-    portfolioVocalTitle: 'Vocals & Songwriting',
-    portfolioVocalText: 'Lead vocals, backing vocals, toplines, hook ideas and emotional interpretations for pop, dark pop, rock and cinematic sounds.',
-    portfolioVoiceTitle: 'Speaker, Host & Presenter',
-    portfolioVoiceText: 'A charismatic presence for events, moderation, speeches, live announcements, brand moments and spoken stage formats.',
-    portfolioLiveTitle: 'Live & Events',
-    portfolioLiveText: 'Performances, host intros, event voice, acoustic sets and memorable musical moments with a dark premium look.',
-    servicesTitle: 'Everything a strong voice needs',
-    servicesIntro: 'From first idea to final recording — flexible for small productions and major campaigns.',
-    serviceStudioTitle: 'Baritone Vocals',
-    serviceStudioText: 'Remote recordings, demos, feature parts and complete vocal stems.',
-    serviceCommercialTitle: 'Event Voice',
-    serviceCommercialText: 'Event openings, brand moments, live announcements, product launches and on-stage transitions.',
-    serviceCharacterTitle: 'Speaking & Storytelling',
-    serviceCharacterText: 'Keynotes, storytelling formats, audience interaction and emotionally guided event moments.',
-    serviceCreativeTitle: 'Creative Direction',
-    serviceCreativeText: 'Copy refinement, mood concepts, performance coaching and sound references.',
+    portfolioTitle: 'Portfolio',
+    portfolioIntro: 'My three biggest projects',
+    portfolioCarouselAria: 'Portfolio gallery carousel',
+    portfolioControlsAria: 'Portfolio controls',
+    portfolioPrevAria: 'Previous portfolio item',
+    portfolioNextAria: 'Next portfolio item',
+    portfolioUploadHint1: 'Upload: uploads/portfolio/Auftrag1.png or Auftrag1.mp4',
+    portfolioUploadHint2: 'Upload: uploads/portfolio/Auftrag2.png or Auftrag2.mp4',
+    portfolioUploadHint3: 'Upload: uploads/portfolio/Auftrag3.png or Auftrag3.mp4',
+    portfolioItem1Alt: 'January 2026 performance at KÖPI am Ring in Rheine',
+    portfolioItem2Alt: 'Portfolio upload slot 2',
+    portfolioItem3Alt: 'Portfolio upload slot 3',
+    portfolioItem1Title: 'KÖPI am Ring Rheine — Singer',
+    portfolioItem1Text: 'This is an example order I had.',
+    portfolioItem2Title: 'Order 2',
+    portfolioItem2Text: 'This is an example order I had.',
+    portfolioItem3Title: 'Order 3',
+    portfolioItem3Text: 'This is an example order I had.',
+    aboutEyebrow: 'About Me',
+    aboutTitle: 'Presentation Video',
+    aboutVideoAria: 'Introduction video placeholder',
+    aboutVideoTitle: 'Presentation video',
+    aboutVideoHint: 'Upload your MP4 as uploads/about/introduction.mp4',
+    servicesTitle: 'Services',
+    servicesIntro: 'A warm baritone voice and confident stage presence for live moments, hosted events and spoken productions.',
+    serviceLiveTitle: 'Singer for your Live-Event',
+    serviceLiveText: 'Emotional live vocals for weddings, private celebrations, company events and special atmospheric moments.',
+    serviceHostTitle: 'Speaker & Host for all type of Events',
+    serviceHostText: 'Moderation, announcements and confident guidance through your event with a distinctive voice.',
+    serviceProjectTitle: 'Speaker for Projects',
+    serviceProjectText: 'Voice work for advertisements, brand videos, intros, campaigns and digital productions.',
     newsTitle: 'Latest news',
     newsDate1: 'July 2026',
     newsItem1Title: 'New main website',
@@ -82,6 +89,7 @@ const translations = {
     menuOpenAria: 'Menü öffnen',
     menuCloseAria: 'Menü schließen',
     navPortfolio: 'Portfolio',
+    navAbout: 'Über Mich',
     navServices: 'Services',
     navNews: 'News',
     navBooking: 'Booking',
@@ -91,35 +99,41 @@ const translations = {
     heroTagline: 'Eine markante Stimme zwischen Gänsehaut, Storytelling und dunkler Eleganz — für Musik, Bühne, Events, Moderation, Reden und Markenmomente.',
     signatureAria: 'Signature-Song Platzhalter',
     playAria: 'Signature-Song abspielen',
+    signatureTitle: 'The Healing Shadow',
     signatureSmall: 'Play-Button Placeholder · Audio folgt',
     heroPrimary: 'Jetzt anfragen',
     heroSecondary: 'Portfolio ansehen',
-    introAria: 'Kurzprofil',
-    introEyebrow: 'The Healing Shadow',
-    introTitle: 'Dunkel. Warm. Wiedererkennbar.',
-    introText: 'Ob emotionaler Refrain, cineastische Erzählstimme oder ein kraftvoller Markenclaim: Jason Shadow verbindet baritone Gesangspräsenz mit professioneller Bühnen-, Moderations- und Redner-Performance.',
-    statStudioTitle: 'Bariton & Studio',
-    statStudioText: 'Bariton-Vocals, Demos, Hooks, Intros und komplette Produktionen',
-    statVoiceTitle: 'Events & Speaking',
-    statVoiceText: 'Events, Moderation, Reden, Markenmomente, Social Clips und Live-Ansagen',
-    portfolioTitle: 'Ausgewählte Schwerpunkte',
-    portfolioIntro: 'Ein modularer Überblick für Musik-, Event- und Markenproduktionen.',
-    portfolioVocalTitle: 'Gesang & Songwriting',
-    portfolioVocalText: 'Lead Vocals, Backings, Toplines, Hook-Ideen und emotionale Interpretationen für Pop, Dark Pop, Rock und cineastische Sounds.',
-    portfolioVoiceTitle: 'Sprecher, Moderator & Redner',
-    portfolioVoiceText: 'Charakterstarke Präsenz für Events, Moderation, Reden, Live-Ansagen, Markenmomente und gesprochene Bühnenformate.',
-    portfolioLiveTitle: 'Live & Events',
-    portfolioLiveText: 'Auftritte, Moderations-Intros, Event-Voice, Akustik-Sets und besondere musikalische Momente mit dunklem Premium-Look.',
-    servicesTitle: 'Alles, was eine starke Stimme braucht',
-    servicesIntro: 'Von der ersten Idee bis zur finalen Aufnahme — flexibel für kleine Produktionen und große Kampagnen.',
-    serviceStudioTitle: 'Bariton Vocals',
-    serviceStudioText: 'Remote-Aufnahmen, Demos, Feature-Parts und komplette Vocal-Stems.',
-    serviceCommercialTitle: 'Event Voice',
-    serviceCommercialText: 'Event-Eröffnungen, Markenmomente, Live-Ansagen, Produktlaunches und Bühnenübergänge.',
-    serviceCharacterTitle: 'Reden & Storytelling',
-    serviceCharacterText: 'Keynotes, Storytelling-Formate, Publikumsinteraktion und emotional geführte Eventmomente.',
-    serviceCreativeTitle: 'Creative Direction',
-    serviceCreativeText: 'Text-Feinschliff, Mood-Konzept, Performance-Coaching und Sound-Referenzen.',
+    portfolioTitle: 'Portfolio',
+    portfolioIntro: 'Meine drei größten Aufträge',
+    portfolioCarouselAria: 'Portfolio Galerie-Karussell',
+    portfolioControlsAria: 'Portfolio-Steuerung',
+    portfolioPrevAria: 'Vorheriger Portfolio-Eintrag',
+    portfolioNextAria: 'Nächster Portfolio-Eintrag',
+    portfolioUploadHint1: 'Upload: uploads/portfolio/Auftrag1.png oder Auftrag1.mp4',
+    portfolioUploadHint2: 'Upload: uploads/portfolio/Auftrag2.png oder Auftrag2.mp4',
+    portfolioUploadHint3: 'Upload: uploads/portfolio/Auftrag3.png oder Auftrag3.mp4',
+    portfolioItem1Alt: 'Auftritt im Januar 2026 im KÖPI am Ring in Rheine',
+    portfolioItem2Alt: 'Portfolio Upload-Platz 2',
+    portfolioItem3Alt: 'Portfolio Upload-Platz 3',
+    portfolioItem1Title: 'KÖPI am Ring Rheine — Sänger',
+    portfolioItem1Text: 'This is an example order I had.',
+    portfolioItem2Title: 'Auftrag 2',
+    portfolioItem2Text: 'This is an example order I had.',
+    portfolioItem3Title: 'Auftrag 3',
+    portfolioItem3Text: 'This is an example order I had.',
+    aboutEyebrow: 'Über Mich',
+    aboutTitle: 'Vorstellungsvideo',
+    aboutVideoAria: 'Platzhalter für Vorstellungsvideo',
+    aboutVideoTitle: 'Vorstellungsvideo',
+    aboutVideoHint: 'Lade deine MP4 als uploads/about/introduction.mp4 hoch',
+    servicesTitle: 'Services',
+    servicesIntro: 'Warme Bariton-Stimme und sichere Bühnenpräsenz für Live-Momente, moderierte Events und gesprochene Produktionen.',
+    serviceLiveTitle: 'Sänger für dein Live-Event',
+    serviceLiveText: 'Emotionaler Live-Gesang für Hochzeiten, private Feiern, Firmenevents und besondere atmosphärische Momente.',
+    serviceHostTitle: 'Sprecher & Host für jede Art von Event',
+    serviceHostText: 'Moderation, Ansagen und souveräne Führung durch dein Event mit einer unverwechselbaren Stimme.',
+    serviceProjectTitle: 'Sprecher für Projekte',
+    serviceProjectText: 'Voice-Arbeit für Werbung, Markenvideos, Intros, Kampagnen und digitale Produktionen.',
     newsTitle: 'Aktuelles',
     newsDate1: 'Juli 2026',
     newsItem1Title: 'Neue Main-Website',
@@ -192,6 +206,45 @@ window.matchMedia('(min-width: 861px)').addEventListener('change', (event) => {
 const languageButtons = document.querySelectorAll('[data-lang]');
 const descriptionMeta = document.querySelector('meta[name="description"]');
 
+
+let activePortfolioIndex = 0;
+const portfolioCards = Array.from(document.querySelectorAll('[data-portfolio-card]'));
+const portfolioActiveTitle = document.querySelector('[data-portfolio-active-title]');
+const portfolioActiveText = document.querySelector('[data-portfolio-active-text]');
+
+const updatePortfolioActiveCard = (index = activePortfolioIndex) => {
+  if (!portfolioCards.length) return;
+
+  activePortfolioIndex = (index + portfolioCards.length) % portfolioCards.length;
+  const activeCard = portfolioCards[activePortfolioIndex];
+  const dictionary = translations[document.documentElement.lang] || translations[defaultLanguage];
+  const titleKey = activeCard.dataset.titleKey;
+  const textKey = activeCard.dataset.textKey;
+
+  const previousIndex = (activePortfolioIndex - 1 + portfolioCards.length) % portfolioCards.length;
+  const nextIndex = (activePortfolioIndex + 1) % portfolioCards.length;
+
+  portfolioCards.forEach((card, cardIndex) => {
+    const isActive = cardIndex === activePortfolioIndex;
+    const isPrevious = cardIndex === previousIndex;
+    const isNext = cardIndex === nextIndex;
+
+    card.classList.toggle('is-active', isActive);
+    card.classList.toggle('is-previous', isPrevious && !isActive);
+    card.classList.toggle('is-next', isNext && !isActive);
+    card.setAttribute('aria-current', isActive ? 'true' : 'false');
+    card.setAttribute('aria-hidden', isActive ? 'false' : 'true');
+  });
+
+  if (portfolioActiveTitle && titleKey) {
+    portfolioActiveTitle.textContent = dictionary[titleKey] || activeCard.querySelector('h3')?.textContent || '';
+  }
+
+  if (portfolioActiveText && textKey) {
+    portfolioActiveText.textContent = dictionary[textKey] || '';
+  }
+};
+
 const setLanguage = (language) => {
   const activeLanguage = translations[language] ? language : defaultLanguage;
   const dictionary = translations[activeLanguage];
@@ -217,6 +270,7 @@ const setLanguage = (language) => {
   });
 
   setMenuState(menuToggle?.getAttribute('aria-expanded') === 'true');
+  updatePortfolioActiveCard();
 
   languageButtons.forEach((button) => {
     const isActive = button.dataset.lang === activeLanguage;
@@ -242,6 +296,42 @@ const observer = new IntersectionObserver((entries) => {
 }, { threshold: 0.2 });
 
 animatedElements.forEach((element) => observer.observe(element));
+
+
+
+
+document.querySelector('[data-portfolio-prev]')?.addEventListener('click', () => {
+  updatePortfolioActiveCard(activePortfolioIndex - 1);
+});
+
+document.querySelector('[data-portfolio-next]')?.addEventListener('click', () => {
+  updatePortfolioActiveCard(activePortfolioIndex + 1);
+});
+
+portfolioCards.forEach((card, index) => {
+  card.addEventListener('click', () => updatePortfolioActiveCard(index));
+});
+
+document.querySelectorAll('.portfolio-video').forEach((video) => {
+  video.addEventListener('loadeddata', () => {
+    video.closest('.portfolio-media')?.classList.add('has-video');
+  });
+
+  video.addEventListener('error', () => {
+    video.closest('.portfolio-media')?.classList.remove('has-video');
+  });
+});
+
+const introVideo = document.querySelector('.intro-video');
+const aboutVideoCard = document.querySelector('.about-video-card');
+
+introVideo?.addEventListener('loadeddata', () => {
+  aboutVideoCard?.classList.add('has-video');
+});
+
+introVideo?.addEventListener('error', () => {
+  aboutVideoCard?.classList.remove('has-video');
+});
 
 const budgetInput = document.querySelector('#budget');
 const budgetOutput = document.querySelector('#budget-output');
