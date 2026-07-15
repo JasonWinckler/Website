@@ -1,4 +1,4 @@
-const DEFAULT_TEXT_MODEL = "gpt-5.6";
+const DEFAULT_TEXT_MODEL = "gpt-5.6-sol";
 const DEFAULT_GRAPH_VERSION = "v25.0";
 const CRETE_TIME_ZONE = "Europe/Athens";
 
@@ -16,6 +16,10 @@ function requireEnv(name) {
     throw new Error(`Umgebungsvariable ${name} fehlt.`);
   }
   return value;
+}
+
+function getTextModel() {
+  return env.OPENAI_MODEL?.trim() || DEFAULT_TEXT_MODEL;
 }
 
 function getCreteDateContext(date = new Date()) {
@@ -173,7 +177,7 @@ async function openaiResponsesWithFallback(body, phase) {
 }
 
 async function researchTodayContext(dateContext) {
-  const model = env.OPENAI_MODEL || DEFAULT_TEXT_MODEL;
+  const model = getTextModel();
   const existingPrompt = buildExistingPromptSection();
 
   const response = await openaiResponsesWithFallback({
@@ -226,7 +230,7 @@ Antworte ausschließlich als JSON ohne Markdown:
 }
 
 async function generatePostFromResearch(research) {
-  const model = env.OPENAI_MODEL || DEFAULT_TEXT_MODEL;
+  const model = getTextModel();
   const existingPrompt = buildExistingPromptSection();
   const eventOnly = readBoolean("INPUT_EVENT_ONLY", false);
 

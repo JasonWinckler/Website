@@ -30,6 +30,11 @@ The implementation preserves the existing prompt inputs by folding these environ
 
 `INPUT_FORMAT` and `INPUT_WEEK_THEME` are included as binding prompt context during research and final text generation. `INPUT_EVENT_ONLY=true` prevents publishing generic fallback posts when the research finds no holiday or relevant event.
 
+
+## Model default
+
+The script defaults to `gpt-5.6-sol` when `OPENAI_MODEL` is not set.
+
 ## Safer error logging
 
 The script logs separate failure labels for the research and text-generation phases:
