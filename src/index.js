@@ -95,8 +95,38 @@ function parseResearchJson(text) {
   }
 }
 
-async function openaiRequest(path, body) {
+function truncateForLog(value, maxLength = 12000) {
+  const text = typeof value === "string" ? value : JSON.stringify(value, null, 2);
+  if (text.length <= maxLength) return text;
+  return `${text.slice(0, maxLength)}\n... [gekürzt, insgesamt ${text.length} Zeichen]`;
+}
+
+function redactOpenAIRequestBody(body) {
+  return {
+    ...body,
+    input: typeof body.input === "string" ? `${body.input.slice(0, 1200)}${body.input.length > 1200 ? "\n... [gekürzt]" : ""}` : body.input,
+  };
+}
+
+function makeOpenAIError(phase, status, data, requestId) {
+  const message = data?.error?.message || data?.message || data?.raw || "Keine Fehlermeldung im OpenAI-Body.";
+  const type = data?.error?.type || data?.type || "unknown";
+  const param = data?.error?.param || data?.param || "unknown";
+  const code = data?.error?.code || data?.code || "unknown";
+  const detail = truncateForLog(data);
+  return new Error(
+    `OpenAI-${phase} fehlgeschlagen (${status}). request_id=${requestId || "unknown"}; type=${type}; code=${code}; param=${param}; message=${message}\n${detail}`,
+  );
+}
+
+async function openaiRequest(path, body, phase = "Anfrage") {
   const apiKey = requireEnv("OPENAI_API_KEY");
+  const debug = readBoolean("DEBUG_OPENAI", true);
+
+  if (debug) {
+    console.error(`[OpenAI:${phase}] Request ${path}: ${truncateForLog(redactOpenAIRequestBody(body), 4000)}`);
+  }
+
   const response = await fetch(`https://api.openai.com/v1/${path}`, {
     method: "POST",
     headers: {
@@ -106,6 +136,7 @@ async function openaiRequest(path, body) {
     body: JSON.stringify(body),
   });
 
+  const requestId = response.headers.get("x-request-id") || response.headers.get("openai-request-id");
   const payload = await response.text();
   let data;
   try {
@@ -115,18 +146,37 @@ async function openaiRequest(path, body) {
   }
 
   if (!response.ok) {
-    const detail = JSON.stringify(data, null, 2);
-    throw new Error(`OpenAI-Anfrage fehlgeschlagen (${response.status}).\n${detail}`);
+    throw makeOpenAIError(phase, response.status, data, requestId);
+  }
+
+  if (debug) {
+    console.error(`[OpenAI:${phase}] OK request_id=${requestId || "unknown"}`);
   }
 
   return data;
+}
+
+async function openaiResponsesWithFallback(body, phase) {
+  try {
+    return await openaiRequest("responses", body, phase);
+  } catch (error) {
+    const isBadRequest = /\(400\)/.test(error.message || "");
+    if (!isBadRequest || body.max_output_tokens == null) {
+      throw error;
+    }
+
+    const retryBody = { ...body };
+    delete retryBody.max_output_tokens;
+    console.error(`[OpenAI:${phase}] 400 erhalten; retry ohne max_output_tokens.`);
+    return openaiRequest("responses", retryBody, `${phase}:retry-ohne-max_output_tokens`);
+  }
 }
 
 async function researchTodayContext(dateContext) {
   const model = env.OPENAI_MODEL || DEFAULT_TEXT_MODEL;
   const existingPrompt = buildExistingPromptSection();
 
-  const response = await openaiRequest("responses", {
+  const response = await openaiResponsesWithFallback({
     model,
     tools: [
       {
@@ -170,7 +220,7 @@ Antworte ausschließlich als JSON ohne Markdown:
   "sources": ["..."]
 }`,
     max_output_tokens: 1400,
-  });
+  }, "Webrecherche");
 
   return parseResearchJson(extractOutputText(response));
 }
@@ -184,7 +234,7 @@ async function generatePostFromResearch(research) {
     return "";
   }
 
-  const response = await openaiRequest("responses", {
+  const response = await openaiResponsesWithFallback({
     model,
     input: `Erstelle jetzt den finalen deutschen Facebook-Post auf Basis der Recherche.
 
@@ -202,7 +252,7 @@ ${existingPrompt}
 Recherchierte Informationen:
 ${JSON.stringify(research, null, 2)}`,
     max_output_tokens: 1200,
-  });
+  }, "Textgenerierung");
 
   return extractOutputText(response);
 }

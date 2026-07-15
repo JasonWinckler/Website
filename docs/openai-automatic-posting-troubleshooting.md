@@ -37,4 +37,6 @@ The script logs separate failure labels for the research and text-generation pha
 - `OpenAI-Webrecherche fehlgeschlagen.`
 - `OpenAI-Textgenerierung fehlgeschlagen.`
 
-The OpenAI response body is included in the thrown error so future 400 responses show the rejected parameter or unsupported tool combination.
+The OpenAI response body is included in the thrown error so future 400 responses show the rejected parameter or unsupported tool combination. The script also logs the OpenAI request phase (`Webrecherche` or `Textgenerierung`), the request ID returned by OpenAI, and a redacted/truncated request body. Set `DEBUG_OPENAI=false` to suppress these diagnostic request logs after the workflow is stable.
+
+If OpenAI rejects a Responses request with HTTP 400 and the request contained `max_output_tokens`, the script retries that same phase once without `max_output_tokens`. This keeps the run moving when an account/model combination rejects that optional limit, while still surfacing the original phase and retry in the logs.
