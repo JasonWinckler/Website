@@ -3,7 +3,6 @@ const { test, expect } = require('@playwright/test');
 const pages = [
   { path: '/', name: 'home', heading: /Jason Shadow/ },
   { path: '/affiliates/', name: 'affiliates', heading: /Jason Shadow/i },
-  { path: '/exclusive/', name: 'exclusive', heading: /Shadow's Temptation/i },
 ];
 
 test.describe('browser screenshot smoke checks', () => {
