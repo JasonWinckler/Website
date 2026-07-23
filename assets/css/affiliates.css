@@ -1,80 +1,3 @@
-:root {
-  --bg: #130005;
-  --red-deep: #2a0207;
-  --red: #690916;
-  --ember: #ff5a22;
-  --gold: #f8d7a4;
-  --cream: #fff0d2;
-  --muted: #c9a69d;
-  --glass: rgba(28, 4, 9, 0.72);
-  --stroke: rgba(255, 202, 144, 0.22);
-}
-
-* { box-sizing: border-box; }
-
-body {
-  min-height: 100vh;
-  margin: 0;
-  color: var(--cream);
-  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  background:
-    radial-gradient(circle at 50% 105%, rgba(255, 88, 24, 0.48), transparent 34%),
-    radial-gradient(circle at 15% 15%, rgba(150, 15, 29, 0.72), transparent 32%),
-    linear-gradient(145deg, #090003 0%, var(--red-deep) 48%, #070102 100%);
-  overflow-x: hidden;
-}
-
-body::before,
-body::after,
-.ember-field {
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  content: "";
-}
-
-body::before {
-  background:
-    radial-gradient(circle at 20% 80%, rgba(255, 79, 24, 0.22), transparent 18%),
-    radial-gradient(circle at 83% 72%, rgba(255, 180, 81, 0.16), transparent 17%);
-  filter: blur(18px);
-  opacity: 0.9;
-}
-
-body::after {
-  background-image: linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
-  background-size: 42px 42px;
-  mask-image: linear-gradient(to bottom, transparent, black 18%, black 80%, transparent);
-}
-
-.ember-field {
-  background-image:
-    radial-gradient(circle, rgba(255, 214, 128, 0.95) 0 1px, transparent 2px),
-    radial-gradient(circle, rgba(255, 83, 28, 0.7) 0 1px, transparent 2px);
-  background-size: 130px 180px, 190px 240px;
-  animation: embers 14s linear infinite;
-  opacity: 0.35;
-}
-
-.page-shell {
-  width: min(94vw, 760px);
-  min-height: 100vh;
-  margin: 0 auto;
-  display: grid;
-  place-items: center;
-  padding: 38px 0;
-}
-
-.profile-card {
-  width: 100%;
-  overflow: hidden;
-  border: 1px solid var(--stroke);
-  border-radius: 34px;
-  background: linear-gradient(180deg, rgba(55, 5, 12, 0.86), var(--glass));
-  box-shadow: 0 34px 90px rgba(0, 0, 0, 0.48), 0 0 80px rgba(177, 25, 10, 0.24);
-  backdrop-filter: blur(18px);
-}
-
 .banner-wrap {
   position: relative;
   aspect-ratio: 800 / 198;
@@ -139,58 +62,6 @@ h1 {
   line-height: 1.65;
 }
 
-.link-list {
-  display: grid;
-  gap: 16px;
-}
-
-.link-button {
-  position: relative;
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  min-height: 78px;
-  padding: 18px 20px;
-  color: var(--cream);
-  text-align: left;
-  text-decoration: none;
-  border: 1px solid var(--stroke);
-  font: inherit;
-  cursor: pointer;
-  border-radius: 22px;
-  background: linear-gradient(135deg, rgba(255,255,255,0.09), rgba(255,255,255,0.025));
-  box-shadow: inset 0 1px 0 rgba(255,255,255,0.13), 0 14px 32px rgba(0,0,0,0.2);
-  transition: transform 220ms ease, border-color 220ms ease, box-shadow 220ms ease;
-}
-
-.link-button::after {
-  position: absolute;
-  right: 20px;
-  content: "→";
-  color: var(--gold);
-  font-size: 1.35rem;
-}
-
-.link-button:hover,
-.link-button:focus-visible {
-  transform: translateY(-3px) scale(1.01);
-  border-color: rgba(255, 216, 158, 0.62);
-  box-shadow: 0 18px 44px rgba(0,0,0,0.32), 0 0 32px rgba(255, 75, 22, 0.22);
-  outline: none;
-}
-
-.icon {
-  display: grid;
-  width: 46px;
-  height: 46px;
-  place-items: center;
-  flex: 0 0 auto;
-  border-radius: 16px;
-  background: rgba(255, 225, 177, 0.12);
-  color: var(--gold);
-  font-size: 1.4rem;
-}
-
 .brand-icon {
   width: 26px;
   height: 26px;
@@ -217,9 +88,6 @@ h1 {
   opacity: 0.82;
 }
 
-.link-button strong { display: block; font-size: 1.04rem; }
-button.link-button { width: 100%; }
-.link-button small { color: var(--muted); }
 .donate { background: linear-gradient(135deg, rgba(255, 91, 32, 0.24), rgba(255,255,255,0.035)); }
 .affiliate-gallery {
   display: grid;
@@ -327,22 +195,6 @@ button.link-button { width: 100%; }
   overflow: hidden;
   opacity: 0;
   pointer-events: none;
-}
-
-[data-animate="rise"] {
-  opacity: 0;
-  transform: translateY(18px);
-  transition: opacity 700ms ease, transform 700ms ease;
-}
-
-[data-animate="rise"].is-visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-@keyframes embers {
-  from { background-position: 0 100vh, 70px 100vh; }
-  to { background-position: 0 -220px, 70px -300px; }
 }
 
 @media (max-width: 560px) {
